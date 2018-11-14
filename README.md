@@ -29,6 +29,8 @@ use philperusse\NovaTooltipField\Tooltip;
 
 ```
 
+#### HTML
+
 You can also pass HTML to the tooltip.
 
 ```php
