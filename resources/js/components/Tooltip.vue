@@ -2,7 +2,8 @@
 
     <span
         class="cursor-pointer text-70 hover:text-primary mr-3"
-        ref="tooltip">
+        ref="tooltip"
+        v-if="value">
         <svg xmlns="http://www.w3.org/2000/svg"
              class="fill-current"
              width="22" height="18"
