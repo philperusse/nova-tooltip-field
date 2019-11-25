@@ -2,7 +2,8 @@
 
     <span
         class="cursor-pointer text-70 hover:text-primary mr-3"
-        ref="tooltip">
+        ref="tooltip"
+        v-if="!text">
         <svg xmlns="http://www.w3.org/2000/svg"
              class="fill-current"
              width="22" height="18"
@@ -13,23 +14,25 @@
             <path  d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 9a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
         </svg>
     </span>
+    <span ref="tooltip" v-else>{{ text }}</span>
 </template>
 
 <script>
     import Tooltip from 'tooltip.js';
 
+    
     export default {
 
         data: () => ({ tooltip : null }),
 
-        props: ['value'],
+        props: ['value', 'text'],
 
         mounted() {
-
             this.tooltip = new Tooltip(this.$refs.tooltip, {
                 html: true,
                 title: this.value,
                 trigger: "hover",
+                placement: "bottom",
             })
         }
 
