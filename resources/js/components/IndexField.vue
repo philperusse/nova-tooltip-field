@@ -1,6 +1,6 @@
 <template>
 
-    <tooltip :value="field.value"></tooltip>
+    <tooltip :value="field.value" :text="field.text"></tooltip>
 
     <!--div v-if="field.asHtml" v-html="field.value"></div>
     <span v-else class="whitespace-no-wrap">{{ field.value }}</span-->
